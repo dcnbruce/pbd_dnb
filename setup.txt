@@ -1,0 +1,300 @@
+usage: git [--version] [--help] [-C <path>] [-c name=value]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           <command> [<args>]
+
+These are common Git commands used in various situations:
+
+start a working area (see also: git help tutorial)
+   clone      Clone a repository into a new directory
+   init       Create an empty Git repository or reinitialize an existing
+one
+
+work on the current change (see also: git help everyday)
+   add        Add file contents to the index
+   mv         Move or rename a file, a directory, or a symlink
+   reset      Reset current HEAD to the specified state
+   rm         Remove files from the working tree and from the index
+
+examine the history and state (see also: git help revisions)
+   bisect     Use binary search to find the commit that introduced a bug
+   grep       Print lines matching a pattern
+   log        Show commit logs
+   show       Show various types of objects
+   status     Show the working tree status
+
+grow, mark and tweak your common history
+   branch     List, create, or delete branches
+   checkout   Switch branches or restore working tree files
+   commit     Record changes to the repository
+   diff       Show changes between commits, commit and working tree, etc
+   merge      Join two or more development histories together
+   rebase     Reapply commits on top of another base tip
+   tag        Create, list, delete or verify a tag object signed with GPG
+
+collaborate (see also: git help workflows)
+   fetch      Download objects and refs from another repository
+   pull       Fetch from and integrate with another repository or a local branch
+   push       Update remote refs along with associated objects
+
+'git help -a' and 'git help -g' list available subcommands and some
+concept guides. See 'git help <command>' or 'git help <concept>'
+to read about a specific subcommand or concept.
+
+C:\Users\Douglas>git
+usage: git [--version] [--help] [-C <path>] [-c name=value]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           <command> [<args>]
+
+These are common Git commands used in various situations:
+
+start a working area (see also: git help tutorial)
+   clone      Clone a repository into a new directory
+   init       Create an empty Git repository or reinitialize an existing
+one
+
+work on the current change (see also: git help everyday)
+   add        Add file contents to the index
+   mv         Move or rename a file, a directory, or a symlink
+   reset      Reset current HEAD to the specified state
+   rm         Remove files from the working tree and from the index
+
+examine the history and state (see also: git help revisions)
+   bisect     Use binary search to find the commit that introduced a bug
+   grep       Print lines matching a pattern
+   log        Show commit logs
+   show       Show various types of objects
+   status     Show the working tree status
+
+grow, mark and tweak your common history
+   branch     List, create, or delete branches
+   checkout   Switch branches or restore working tree files
+   commit     Record changes to the repository
+   diff       Show changes between commits, commit and working tree, etc
+   merge      Join two or more development histories together
+   rebase     Reapply commits on top of another base tip
+   tag        Create, list, delete or verify a tag object signed with GPG
+
+collaborate (see also: git help workflows)
+   fetch      Download objects and refs from another repository
+   pull       Fetch from and integrate with another repository or a local branch
+   push       Update remote refs along with associated objects
+
+'git help -a' and 'git help -g' list available subcommands and some
+concept guides. See 'git help <command>' or 'git help <concept>'
+to read about a specific subcommand or concept.
+
+C:\Users\Douglas>cd Downloads/DBS/pyprog git clone https://github.com/dcnbruce/pbd_dnb.git
+The filename, directory name, or volume label syntax is incorrect.
+
+C:\Users\Douglas>cd Downloads/DBS git clone https://github.com/dcnbruce/pbd_dnb.git
+The filename, directory name, or volume label syntax is incorrect.
+
+C:\Users\Douglas> cd Downloads git clone https://github.com/dcnbruce/pbd_dnb.git
+The filename, directory name, or volume label syntax is incorrect.
+
+C:\Users\Douglas>cd downloads
+
+C:\Users\Douglas\Downloads>git clone https://github.com/dcnbruce/pbd_dnb.git
+Cloning into 'pbd_dnb'...
+remote: Counting objects: 3, done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+
+C:\Users\Douglas\Downloads>pbd_dnb
+'pbd_dnb' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\Douglas\Downloads>cd pbd_dnb
+
+C:\Users\Douglas\Downloads\pbd_dnb>git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+nothing to commit, working tree clean
+
+C:\Users\Douglas\Downloads\pbd_dnb>git pull
+Already up-to-date.
+
+C:\Users\Douglas\Downloads\pbd_dnb>git diff
+diff --git a/README.md b/README.md
+index f993a0f..be5c864 100644
+--- a/README.md
++++ b/README.md
+@@ -1,2 +1,3 @@
+ # pbd_dnb
+ Programming for big data
++# This is where I save my commands in programming for big data
+\ No newline at end of file
+
+C:\Users\Douglas\Downloads\pbd_dnb>git add README.md
+
+C:\Users\Douglas\Downloads\pbd_dnb>git add README.md
+
+C:\Users\Douglas\Downloads\pbd_dnb>git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   README.md
+
+
+C:\Users\Douglas\Downloads\pbd_dnb>commit -m "add ca4, ca5, ca6 details"
+README.md
+'commit' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\Douglas\Downloads\pbd_dnb>git commit -m "add ca4, ca5, ca6 details" README.md
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'Douglas@Lenovo-PC.(none)')
+
+C:\Users\Douglas\Downloads\pbd_dnb>git config --global --edit
+
+C:\Users\Douglas\Downloads\pbd_dnb>git config --global user.email "you@example.com"
+
+C:\Users\Douglas\Downloads\pbd_dnb> git config --global dcnbruce@yahoo.com
+error: invalid key: dcnbruce@yahoo.com
+
+C:\Users\Douglas\Downloads\pbd_dnb> git config --global user.email "dcnbruce@yahoo.com"
+
+C:\Users\Douglas\Downloads\pbd_dnb>git config --global user.name "Douglas Nanka-Bruce"
+
+C:\Users\Douglas\Downloads\pbd_dnb>git push
+Everything up-to-date
+
+C:\Users\Douglas\Downloads\pbd_dnb>pbd_dnb>git commit -m "add ca4, ca5, ca6 detai
+'pbd_dnb' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\Douglas\Downloads\pbd_dnb>git commit -m "add ca4, ca5, ca6 details" README.md
+[master 1b763db] add ca4, ca5, ca6 details
+ 1 file changed, 1 insertion(+)
+
+C:\Users\Douglas\Downloads\pbd_dnb>git push
+Counting objects: 3, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 332 bytes | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/dcnbruce/pbd_dnb.git
+   f937c6d..1b763db  master -> master
+
+C:\Users\Douglas\Downloads\pbd_dnb>git diff
+diff --git a/README.md b/README.md
+index be5c864..5acb7df 100644
+--- a/README.md
++++ b/README.md
+@@ -1,3 +1,3 @@
+ # pbd_dnb
+ Programming for big data
+-# This is where I save my commands in programming for big data
+\ No newline at end of file
++# This is where I save my commands in programming for big data c4, c5, and c6.
+\ No newline at end of file
+
+C:\Users\Douglas\Downloads\pbd_dnb>git push
+Everything up-to-date
+
+C:\Users\Douglas\Downloads\pbd_dnb>git add README.md
+
+C:\Users\Douglas\Downloads\pbd_dnb>git commit -m "test" README.md
+[master 1c5e7c2] test
+ 1 file changed, 6 insertions(+), 1 deletion(-)
+
+C:\Users\Douglas\Downloads\pbd_dnb>git push
+Counting objects: 3, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 342 bytes | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/dcnbruce/pbd_dnb.git
+   1b763db..1c5e7c2  master -> master
+
+C:\Users\Douglas\Downloads\pbd_dnb>git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        attempts.csv
+        attempts.py
+        attempts.txt
+        git
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+C:\Users\Douglas\Downloads\pbd_dnb>git add *.*
+warning: LF will be replaced by CRLF in attempts.txt.
+The file will have its original line endings in your working directory.
+
+C:\Users\Douglas\Downloads\pbd_dnb>git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        new file:   attempts.csv
+        new file:   attempts.py
+        new file:   attempts.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        git
+
+
+C:\Users\Douglas\Downloads\pbd_dnb>git commit -m "add the attempts parsing"
+[master 01649c4] add the attempts parsing
+ 3 files changed, 237 insertions(+)
+ create mode 100644 attempts.csv
+ create mode 100644 attempts.py
+ create mode 100644 attempts.txt
+
+C:\Users\Douglas\Downloads\pbd_dnb>git push
+Counting objects: 5, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (5/5), 5.37 KiB | 0 bytes/s, done.
+Total 5 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), done.
+To https://github.com/dcnbruce/pbd_dnb.git
+   1c5e7c2..01649c4  master -> master
+
+C:\Users\Douglas\Downloads\pbd_dnb>git add *.*
+
+C:\Users\Douglas\Downloads\pbd_dnb>git commit -m "add all my python code" pydata
+error: pathspec 'pydata' did not match any file(s) known to git.
+
+C:\Users\Douglas\Downloads\pbd_dnb>git commit -m "add the attempts parsing" *.*
+[master fa99d31] add the attempts parsing
+ 7 files changed, 575 insertions(+), 1 deletion(-)
+ create mode 100644 calculator.py
+ create mode 100644 calculator.pyc
+ create mode 100644 car.py
+ create mode 100644 car.pyc
+ create mode 100644 car_app.py
+ create mode 100644 test_calculator.py
+
+C:\Users\Douglas\Downloads\pbd_dnb>git push
+Counting objects: 9, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (9/9), done.
+Writing objects: 100% (9/9), 7.59 KiB | 0 bytes/s, done.
+Total 9 (delta 0), reused 0 (delta 0)
+To https://github.com/dcnbruce/pbd_dnb.git
+   01649c4..fa99d31  master -> master
+
+C:\Users\Douglas\Downloads\pbd_dnb>
