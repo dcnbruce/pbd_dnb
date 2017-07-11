@@ -79,7 +79,7 @@ class DBS_Car_Rental(object):
         self.petrol_cars = []
         self.diesel_cars = []
         self.hybrid_cars = []
-
+        self.car_fleet = []
 # setting up a function to define the current stock of the car fleet
     def current_stock(self):
         for i in range(4):
@@ -90,14 +90,17 @@ class DBS_Car_Rental(object):
             self.diesel_cars.append(DieselCar())
         for i in range(8):
             self.hybrid_cars.append(HybridCar())
-			
+       #for i in range(40):
+           #self.car_fleet.append(CarFleet())
 # setting up a function to define the entire stock of the car fleet   
     def stock_count(self):
         print 'petrol cars in stock: ' + str(len(self.petrol_cars))
         print 'electric cars in stock: ' + str(len(self.electric_cars))
         print 'diesel cars in stock: ' + str(len(self.diesel_cars))
-        print 'hybrid cars in stock: ' + str(len(self.hybrid_cars))  
-		
+        print 'hybrid cars in stock: ' + str(len(self.hybrid_cars)) 
+       #print 'number of cars in stock: ' + str(len(self.car_fleet)) 
+	   #print list(self.car_fleet), lists all 40 cars
+	   
 # A function that prompts the user about car availability and car category availability
     def rent(self, car_list, quantity):
         if len(car_list) == 0:
@@ -110,26 +113,58 @@ class DBS_Car_Rental(object):
         while total < quantity:
             car_list.pop()
             total = total + 1
-			
+
+# A function that prompts the user about car returns 
+    def returns(self, car_list, quantity):
+        if len(car_list) > quantity : 
+            return
+        total = 0  
+        while total < quantity:
+            car_list.remove()
+            total = total - 1
+            return total
 # A function for users to communicate with DBS Rental Cars     
+	
     def process_rental(self):
-        
-        selection = raw_input('Would you like to rent a car? Please select y for yes and n for no y/n: ')
-        if selection == 'y':
-            selection = raw_input('What type would you like? \nPlease enter p\e\d\h as follows:\n p for petrol,  e for electric,  d for diesel and  h for hybrid: ')
-            quantity = int(raw_input('How many cars would you like to rent?: '))
-            if selection == 'p':
-                self.rent(self.petrol_cars, quantity) 
+        selection = raw_input("would you a car rental or return transaction? \nPlease enter rent or return: ")
+# rentals       
+        while selection == 'rent':
+            
+            selection = raw_input('Would you like to rent a car? Please select y for yes and n for no y/n: ')
+            if selection == 'y':
+                selection = raw_input('What type would you like? \nPlease enter p\e\d\h as follows:\n p for petrol,  e for electric,  d for diesel and  h for hybrid: ')
+                quantity = int(raw_input('How many cars would you like to rent?: '))
+                if selection == 'p':
+                    self.rent(self.petrol_cars, quantity) 
                 
-            elif selection == 'd':
-                self.rent(self.diesel_cars, quantity)
+                elif selection == 'd':
+                    self.rent(self.diesel_cars, quantity)
                  
-            elif selection == 'h':
-                self.rent(self.hybrid_cars, quantity)
-            else:    
-                self.rent(self.electric_cars, quantity)
-             
-        self.stock_count()
+                elif selection == 'h':
+                    self.rent(self.hybrid_cars, quantity)
+                else:    
+                    self.rent(self.electric_cars, quantity)
+
+# returns (can't get it to work, feedback appreciated)		
+        while selection == 'return':
+            selection = raw_input('Would you like to return a car? Please select y for yes and n for no y/n: ')
+            if selection == 'y':
+                selection = raw_input('What type are you returning? \nPlease enter p\e\d\h as follows:\n p for petrol,  e for electric,  d for diesel and  h for hybrid: ')
+                quantity = int(raw_input('How many cars would you like to return?: '))
+                total = 0
+                if selection == 'p' and total < 20: 
+                    self.returns(self.petrol_cars, (total - quantity)) 
+                
+                elif selection == 'd' and total < 8: 
+                    self.returns(self.diesel_cars, (total - quantity))
+                 
+                elif selection == 'h' and total < 8:
+                    self.returns(self.hybrid_cars, (total - quantity))
+                
+                elif selection == 'e' and total < 4:  
+                    self.returns(self.electric_cars, (total - quantity))
+        self.stock_count() 
+        
 #Allow users to continue or exit the program
 dbs_car_rental = DBS_Car_Rental()
 dbs_car_rental.current_stock()
