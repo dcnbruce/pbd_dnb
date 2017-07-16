@@ -107,7 +107,7 @@ cube_root_function (27)  # returns the value of 3
 cube_root_function (0)  # returns the value of 0
 cube_root_function (0.5)  # returns the value of 0.7937
 #cube_root_function (-64) 
-# the number R returns NaN for the cube root of -64 instead of -4  but this is the correct interpretation in R for real domain; the polyroot function in R will return the cubic root result. The way around this issue is to use the root function immediately below.
+# R returns NaN for the cube root of -64 instead of -4  but this is the correct interpretation in R for real domain; the polyroot function in R will return the cubic root result. The way around this issue is to use the root function immediately below.
 
 #------------------------------------------------------------------------------------------------------------------------
 #9 return the (cube) root of both positive and negative numbers in R. This will work for most roots of real numbers.
@@ -196,7 +196,7 @@ tangent_function(0)   # returns the value of 0
 tangent_function(180)   # returns the value of 0  
 tangent_function(45)  # returns the value of 1
 tangent_function(-21.5)  # returns the value of -0.3939
-
+# The in-built R function returns some big numbers for tan (90), tan(-90), tan(270), tan(-270), tan(450), etc but should be returning 'undefined' so #14-1 uses a function I have developed to return the correct values.
 
 #---------------------------------------------------------------------------------------------
 
@@ -226,14 +226,14 @@ new_function <- function(x)
 }
 
 # using test cases for tangent function in degrees; note, inbuilt R function for tan(x) returns values for tan 90, tan -90, etc instead of Nan or Undefined or Error.
-tangent_function(60)   # returns the value of  1.7321 
-tangent_function(0)   # returns the value of 0 
-tangent_function(180)   # returns the value of 0  
-tangent_function(45)  # returns the value of 1
-tangent_function(-90)  # must return the value of -Inf or NaN but R isn't returning this.
-tangent_function(90)  # must return the value of Inf or NaN but R isn't returning this.
-tangent_function(270)  # must return the value of Inf or NaN but R isn't returning this.
-tangent_function(-270)  # must return the value of -Inf or NaN but R isn't returning this.
-tangent_function(-450)  # must return the value of -Inf or NaN but R isn't returning this.
+new_function(60)   # returns the value of  1.7321 
+new_function(0)   # returns the value of 0 
+new_function(180)   # returns the value of 0  
+new_function(45)  # returns the value of 1
+new_function(-90)  # returns the value of Undefined.
+new_function(90)  # returns the value of Undefined.
+new_function(270)  # returns the value of Undefined.
+new_function(-270)  # returns the value of Undefined.
+new_function(-450) # returns the value of Undefined.
 #---------------------------------------------------------------------------------------------
 # END

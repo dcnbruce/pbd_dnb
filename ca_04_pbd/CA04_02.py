@@ -1,10 +1,10 @@
 # Student ID 10365675 
 # Date: 16 July 2017
 # Programming for Big Data continuous assessment: No. 4b
-# CA 04b: Lambda, map, filter reduce and list comprehension
+# CA 04 Part 2: Lambda, map, filter reduce and list comprehension
 #================================================
 import math	
-# Lambda is used in place of functions when it is not going to be repeated in the programme and is used with a name or anonymously.
+# Lambda is used in place of functions when it is not going to be repeated in the program and is used with a name or anonymously.
 #addition operation
 add = reduce(lambda x, y: x+y, [7,8,9,10,11,12,14])
 print "Using reduce with lambda on a list that is based on the addition operator is: ", add
@@ -52,7 +52,7 @@ print "The reduced form of the list is: ", w
 print
 #------------------------------------------------
 
-#division operation
+#Map use on the division operation
 def divide(x, y):
 	if x == 0:
 		return 0
@@ -67,7 +67,7 @@ print "The mapping after the division operation is: ", answer
 print
 
 #------------------------------------------------
-# Map use: Natural log notation taking a value of x on a list from 1 to 10 and returning log(x) of these numbers
+# Map use with natural log function: Natural log notation taking a value of x on a list from 1 to 10 and returning log(x) of these numbers
 def log(x) :
 	if x <= 0:
 # Number should be greater than zero	
@@ -75,7 +75,7 @@ def log(x) :
 	return math.log(x)
 y = [2,5,7,9,4,7, -1]
 answer = map(log, y)
-print "The mapping of natural log to a list of 7 numbers including a negative one returns the following list, the negative one returns 'invalid': ", answer
+print "The mapping of natural log to a list of 7 numbers including a negative one returns the following list; the negative one returns 'invalid': ", answer
 
 #The results of mapping natural log to a list of 7 numbers including a negative one returns the following list, the negative number returns 'invalid':  [0.6931471805599453, 1.6094379124341003, 1.9459101490553132, 2.1972245773362196, 1.3862943611198906, 1.9459101490553132, 'INVALID']
 print
@@ -141,7 +141,7 @@ def pow(x, y):
 	if x != 0 and y == 1 :
 		return x
 	if x ==0 and y ==0:
-		return 'NAN'
+		return 'NaN'
 	if x ==0 and y != 0 : 
 		return 0
 	if x !=0 and y ==0:
@@ -155,16 +155,16 @@ answer = map(pow,x,y)
 
 print "The result of x raised to the power y in the lists are as follows: ", answer
 # Returns the values of	the following list:
-# The results of x raised to the power y in the lists are as follows:  ['NAN', 1, 8, 81, 1000, 14641, 248832, 7529536]
+# The results of x raised to the power y in the lists are as follows:  ['NaN', 1, 8, 81, 1000, 14641, 248832, 7529536]
 print 
 
 #------------------------------------------------
-# Map use: Natural log notation taking a value of x on a list from 1 to 10 and returning log(x) of these numbers
+# Lambda and map use: Natural log notation again to take a value of x on a list from 1 to 12 and return log(x) of these numbers
 
-list = [1,2,3,4,5,6,7,8,9,10]
+list = [1,2,3,4,5,6,7,8,9,10, 11, 12]
 natural_logarithm = map(lambda x:(math.log(x)), list)
 print "The natural logarithm of all 10 numbers are: ",natural_logarithm  
-# This prints the following list:  [0.0, 0.6931471805599453, 1.0986122886681098, 1.3862943611198906, 1.6094379124341003, 1.791759469228055, 1.9459101490553132, 2.0794415416798357, 2.1972245773362196, 2.302585092994046] 
+# This prints the following list:  [0.0, 0.6931471805599453, 1.0986122886681098, 1.3862943611198906, 1.6094379124341003, 1.791759469228055, 1.9459101490553132, 2.0794415416798357, 2.1972245773362196, 2.302585092994046, 2.3978952727983707, 2.4849066497880004]
 print 	
 
 #----------------------------------------------	
